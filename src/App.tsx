@@ -19,6 +19,8 @@ function App({title}: Props) {
 
   const addNewTask = (task: Task) => setTasks([...tasks, task]);
 
+  const deleteTask = (id: number) => setTasks(tasks.filter((task) => task.id !== id));
+
   return (
     <div className="bg-dark" style={{ height: "100vh" }}>
       <nav className="navbar navbar-dark bg-primary">
@@ -41,7 +43,7 @@ function App({title}: Props) {
                 Total Tasks <span className="badge bg-primary ms-2">{tasks.length}</span>
               </h6> */}
 
-              <TaskList tasks={tasks} /* deleteATask={deleteATask} */ />
+              <TaskList tasks={tasks} deleteTask={deleteTask} />
             </div>
           </div>
         </div>
