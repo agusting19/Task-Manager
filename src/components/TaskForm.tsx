@@ -12,6 +12,8 @@ const initialState = {
   description: "",
 }
 
+const getId = (): number => new Date().getTime();
+
 export default function TaskForm({ addNewTask }: Props) {
   const [task, setTask] = useState(initialState);
 
@@ -21,7 +23,7 @@ export default function TaskForm({ addNewTask }: Props) {
 
   const handleCreateTask = (e: ChangeEvent<HTMLFormElement>) => {
     e.preventDefault();
-    addNewTask({ ...task, completed: false });
+    addNewTask({ ...task, id: getId(), completed: false });
     setTask(initialState);
   };
 
