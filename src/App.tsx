@@ -39,10 +39,9 @@ function App({title}: Props) {
           </div>
           <div className="col-md-8">
             <div className="row">
-              {/* <h6 className="text-light d-flex justify-content-end">
+              <h6 className="text-light d-flex justify-content-end">
                 Total Tasks <span className="badge bg-primary ms-2">{tasks.length}</span>
-              </h6> */}
-
+              </h6>
               <TaskList tasks={tasks} deleteTask={deleteTask} />
             </div>
           </div>
