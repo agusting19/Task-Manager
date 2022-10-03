@@ -17,6 +17,8 @@ function App({title}: Props) {
     completed: false,
   }]);
 
+  const addNewTask = (task: Task) => setTasks([...tasks, task]);
+
   return (
     <div className="bg-dark" style={{ height: "100vh" }}>
       <nav className="navbar navbar-dark bg-primary">
@@ -31,7 +33,7 @@ function App({title}: Props) {
       <main className="container p-4">
         <div className="row">
           <div className="col-md-4">
-            <TaskForm /* addANewTask={addANewTask} */ />
+            <TaskForm addNewTask={addNewTask} />
           </div>
           <div className="col-md-8">
             <div className="row">
